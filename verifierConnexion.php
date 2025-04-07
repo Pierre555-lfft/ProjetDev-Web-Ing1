@@ -9,7 +9,7 @@ if (!empty($_POST['login']) && !empty($_POST['mdp'])) {
     // Connexion à la base de données
     $host = 'localhost';
     $user = 'Pierre';
-    $db_password = 'Mdp_morane1'; // mot de passe MySQL (vide si WAMP/XAMPP)
+    $db_password = 'Mdp_morane1'; // mot de passe MySQL 
     $database = 'parcAttraction'; // à adapter avec le vrai nom de ta base
 
     $conn = mysqli_connect($host, $user, $db_password, $database);
