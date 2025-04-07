@@ -1,3 +1,7 @@
+<!-- Code de la page d'accueil-->
+<!-- auteur : Pierre Laforest-->
+<!-- date : 29/03/25-->
+ 
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +14,7 @@
     <body>
       <!-- Inclusion du fichier hautPage.php pour afficher le menu -->
       <?php
-      include "hautPage.php";
+      include "hautPage.php"; // inclusion du haut de page 
       ?>
       <br>
       <!-- Titre de présentation -->
@@ -21,7 +25,7 @@
       
      <!-- Inclusion du fichier basPage.php pour afficher le bas de page -->
      <?php
-     include "basPage.php";
+     include "basPage.php"; // inclusion du bas de page
      ?>
     </body>
 </html>
