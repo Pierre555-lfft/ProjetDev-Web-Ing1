@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- j'avais fait une faute d'orthographe sur parc-->
         <title>Parc d'attraction</title>
         <meta charset="utf-8">
         <!-- lien qui relie cette page au css-->
