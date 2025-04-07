@@ -7,6 +7,7 @@
     <head>
         <title>Park d'attraction</title>
         <meta charset="utf-8">
+        <!-- lien qui relie cette page au css-->
         <link rel="stylesheet" type="text/css" href="accueil.css" />
         <!-- lien pour le logo de page-->
    	    <link rel="icon" href="logo.jpeg">
