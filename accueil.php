@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Park d'attraction</title>
+        <title>Parc d'attraction</title>
         <meta charset="utf-8">
         <!-- lien qui relie cette page au css-->
         <link rel="stylesheet" type="text/css" href="accueil.css" />
