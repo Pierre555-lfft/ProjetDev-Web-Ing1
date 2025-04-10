@@ -20,18 +20,18 @@
                 <li>
                     <img class="logo" src="images/logo3.jpg" />
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'accueil' ? 'active' : ''; ?>" onclick="accueil()">Accueil</button> <!-- active permet d'indiquer la page active afin de changer sa couleur -->
-                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'actualite' ? 'active' : ''; ?>" onclick="actualite()">Actualités / Agenda</button>
-                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'presentation' ? 'active' : ''; ?>" onclick="presentation()">Présentation</button>
+                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'actualite' ? 'active' : ''; ?>" onclick="actualite()">Présentation</button>
+                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'presentation' ? 'active' : ''; ?>" onclick="presentation()">Billetterie</button>
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'activite' ? 'active' : ''; ?>" onclick="activite()">Activités</button>
-                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'galerie' ? 'active' : ''; ?>" onclick="galerie()">Galeries</button>
+                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'galerie' ? 'active' : ''; ?>" onclick="galerie()">Objets Connectés</button>
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'NousContacter' ? 'active' : ''; ?>" onclick="nousContacter()">Nous Contacter</button>
                     <?php
                         if ($_SESSION['user'] === 'admin') {
-                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'pageMembre' ? 'active' : '') . "' onclick='membre()'>Espace Membre</button>";
-                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'upload' ? 'active' : '') . "' onclick='admin()'>Modifications</button>";
+                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'pageMembre' ? 'active' : '') . "' onclick='membre()'>Espace Client</button>";
+                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'upload' ? 'active' : '') . "' onclick='admin()'>Espace Admin</button>";
                         }
                         if ($_SESSION['user'] === 'membre') {
-                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'pageMembre' ? 'active' : '') . "' onclick='membre()'>Espace Membre</button>";
+                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'pageMembre' ? 'active' : '') . "' onclick='membre()'>Espace Client</button>";
                         }
                     ?>
                 </li>
