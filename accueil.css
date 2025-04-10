@@ -7,10 +7,12 @@ body{
     background-position: center;
    }
    .z1{
+    background-color: rgba(228, 150, 90, 0.8);
      border-radius: 25px;
      margin:auto;
-     height:4.5em;
-     width:100em;
+     height: auto;
+     width: 40em;
+     float: center;
    }
    
    .textepresentation{
