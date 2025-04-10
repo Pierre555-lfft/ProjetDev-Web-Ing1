@@ -39,14 +39,13 @@
         </nav>
         <!-- Permet de gérer la connexion en fonction du statut de l'utilisateur-->
         <form id="formConnexion" action="<?php
-            if ($_SESSION['user'] === 'admin') {
-                echo 'admin.php';
-            } elseif ($_SESSION['user'] === 'membre') {
-                echo 'membre.php';
+            if (isset($_SESSION['user']) && ($_SESSION['user'] === 'admin' || $_SESSION['user'] === 'membre')) {
+                echo 'deconnexion.php';
             } else {
                 echo 'connexion.php';
             }?>" method="post">
-            <p><input type="submit" class="connexion <?php echo ($current_page == 'connexion' || $current_page == 'admin' || $current_page == 'membre') ? 'active' : ''; ?>" value="Se connecter"></p>
+            <p><input type="submit" class="connexion <?php echo ($current_page == 'connexion' || $current_page == 'admin' || $current_page == 'membre') ? 'active' : ''; ?>" 
+                value="<?php echo (isset($_SESSION['user']) && ($_SESSION['user'] === 'admin' || $_SESSION['user'] === 'membre')) ? 'Se déconnecter' : 'Se connecter'; ?>"></p>
         </form>
 
     </div>
