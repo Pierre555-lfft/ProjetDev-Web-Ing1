@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Billetterie</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div><strong>CY PARC</strong></div>
+        <ul class="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Présentation</a></li>
+            <li><a href="calendrier.html">Billeterie</a></li>
+            <li><a href="#">Objets connectés</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Préparez votre visite</a></li>
+            <li><a href="#">Espace Employé</a></li>
+        </ul>
+        <a href="#" class="btn">SE CONNECTER</a>
+    </nav>
+    <fieldset>
+        <h1>Sélectionnez vos billets</h1>
+        <div class="tarifs">
+            <div class="tarif">Adultes (12+) <input type="number" min="0" value="0" id="adultes"></div>
+            <div class="tarif">Enfants (4-11) <input type="number" min="0" value="0" id="enfants"></div>
+            <div class="tarif">Seniors (60+) <input type="number" min="0" value="0" id="seniors"></div>
+        </div>
+    </fieldset>
+  <button onclick="validerParticipants()">Continuer</button>
+
+  <div id="calendrier-section" style="display:none">
+    <h1>Sélectionnez une date</h1>
+    <div class="calendar-nav">
+      <button onclick="changerMois(-1)">&larr; Mois précédent</button>
+      <h2 id="mois-annee"></h2>
+      <button onclick="changerMois(1)">Mois suivant &rarr;</button>
+    </div>
+    <div class="grid" id="calendrier"></div>
+    <div class="prix-total" id="total">Total : 0€</div>
+    <div class="btn-group">
+      <button onclick="payer()">Payer</button>
+    </div>
+  </div>
+
+  <script>
+    const jours = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
+    const aujourdHui = new Date();
+    let dateActuelle = new Date(aujourdHui.getFullYear(), aujourdHui.getMonth(), 1);
+    let dateSelectionnee = null;
+    let nbAdultes = 0, nbEnfants = 0, nbSeniors = 0;
+
+    function estWeekend(date) {
+      return date.getDay() === 0 || date.getDay() === 6;
+    }
+
+    function estHauteSaison(date) {
+      return date.getMonth() === 6 || date.getMonth() === 7;
+    }
+
+    function getPrixBase() {
+      return {
+        adulte: 52,
+        enfant: 44,
+        senior: 44
+      };
+    }
+
+    function getPrixAvecSupplement(date, type) {
+        const base = getPrixBase()[type];
+        let supplement = 0;
+
+        if (estWeekend(date)) supplement += 10;
+        if (estHauteSaison(date)) supplement += 5;
+
+    return base + supplement;
+    }
+
+
+    function genererCalendrier() {
+      const calendrier = document.getElementById("calendrier");
+      const titre = document.getElementById("mois-annee");
+      calendrier.innerHTML = "";
+
+      const mois = dateActuelle.getMonth();
+      const annee = dateActuelle.getFullYear();
+      titre.textContent = dateActuelle.toLocaleString("fr-FR", { month: "long", year: "numeric" });
+
+      jours.forEach(j => {
+        const div = document.createElement("div");
+        div.textContent = j;
+        div.classList.add("day-name");
+        calendrier.appendChild(div);
+      });
+
+      const premierJour = new Date(annee, mois, 1);
+      const dernierJour = new Date(annee, mois + 1, 0);
+
+      let startDay = (premierJour.getDay() + 6) % 7;
+
+      for (let i = 0; i < startDay; i++) {
+        const vide = document.createElement("div");
+        calendrier.appendChild(vide);
+      }
+
+      for (let i = 1; i <= dernierJour.getDate(); i++) {
+        const jour = new Date(annee, mois, i);
+        const div = document.createElement("div");
+        div.classList.add("day");
+
+        const prixJour = nbAdultes * getPrixAvecSupplement(jour, "adulte") +
+                         nbEnfants * getPrixAvecSupplement(jour, "enfant") +
+                         nbSeniors * getPrixAvecSupplement(jour, "senior");
+
+        div.innerHTML = `<div>${i}</div><div class="prix">${prixJour.toFixed(2)}€</div>`;
+
+        div.onclick = () => {
+          document.querySelectorAll(".day").forEach(d => d.classList.remove("selected"));
+          div.classList.add("selected");
+          dateSelectionnee = jour;
+          mettreAJourTotal();
+        }
+
+        calendrier.appendChild(div);
+      }
+    }
+
+    function changerMois(delta) {
+      dateActuelle.setMonth(dateActuelle.getMonth() + delta);
+      genererCalendrier();
+    }
+
+    function mettreAJourTotal() {
+      if (!dateSelectionnee) return;
+      const total = nbAdultes * getPrixAvecSupplement(dateSelectionnee, "adulte") +
+                    nbEnfants * getPrixAvecSupplement(dateSelectionnee, "enfant") +
+                    nbSeniors * getPrixAvecSupplement(dateSelectionnee, "senior");
+
+      document.getElementById("total").textContent = `Total : ${total.toFixed(2)}€`;
+    }
+
+    function validerParticipants() {
+      nbAdultes = parseInt(document.getElementById("adultes").value) || 0;
+      nbEnfants = parseInt(document.getElementById("enfants").value) || 0;
+      nbSeniors = parseInt(document.getElementById("seniors").value) || 0;
+
+      if (nbAdultes + nbEnfants + nbSeniors === 0) {
+        alert("Veuillez sélectionner au moins un billet.");
+        return;
+      }
+
+      document.getElementById("calendrier-section").style.display = "block";
+      genererCalendrier();
+    }
+
+    function payer() {
+      if (!dateSelectionnee) return alert("Veuillez choisir une date.");
+      window.location.href = "css/carte.html";
+    }
+  </script>
+</body>
+</html>

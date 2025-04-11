@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fefaf5;
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fefaf5;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #3B221A;
+    font-weight: bold;
+    transition: color 0.05s ease-in-out;
+}
+.nav-links a:hover {
+    color: #8B5A2B;
+}
+.btn {
+    background-color: #3B221A;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+.btn:hover {
+    background-color: #8B5A2B;
+    transform: scale(1.05);
+}
+
+/* Bandeau défilant */
+.scrolling-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #fefaf5; 
+    padding: 0px 0;
+}
+
+.scrolling-text {
+    display: inline-block;
+    font-size: 5rem; /* Ajuste la taille */
+    font-weight: bold;
+    font-family: 'Archivo Black', sans-serif;
+    color: #3b1e14; 
+    animation: scrollText 20s linear infinite; 
+}
+
+@keyframes scrollText {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+.scrolling-container {
+    display: flex;
+    gap: 0px;
+    position: relative;
+    width: 200%;
+}
+/*Réglage pour l'image pour qu'elle s'adapte à la taille de la page */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+
+/*Billeterie*/
+/*body {
+    background-color: #fefaf5;
+    color:  #3b1e14 ;
+    font-family: "Roboto", sans-serif;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .tarif {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  input[type="number"] {
+    width: 60px;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  button {
+    background-color:pink;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+/*Calendrier*/  
+
+.tarifs, .calendrier { margin-bottom: 20px; width: 30%;}
+.tarif { display: flex; justify-content: space-between; margin: 0.5em 0; }
+.calendar-nav { display: flex; justify-content: space-between; margin-bottom: 1em; align-items: center; }
+.grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5em; }
+.day { padding: 0.5em; background: #fefaf5; text-align: center; cursor: pointer; border-radius: 6px; position: relative; height: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.day:hover { background: #555; }
+.selected { background: #fefaf5; }
+.prix { font-size: 0.8em; color: #ea8730; margin-top: 0.2em; }
+.day-name { font-weight: bold; text-align: center; }
+button { padding: 1em; font-size: 1em; margin-top: 2em; background: #ea8730; border: none; border-radius: 6px; cursor: pointer; }
+.prix-total { font-weight: bold; font-size: 1.2em; margin-top: 1em; }
+.btn-group { display: flex; flex-direction: column; align-items: center; gap: 1em; margin-top: 2em; }
+
