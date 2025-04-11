@@ -13,7 +13,7 @@
         session_start();
         $current_page = basename($_SERVER['PHP_SELF'], ".php");
     ?>
-    <!-- Affichage du menu-->
+    <!-- Affichage du mennnnnu-->
     <div class="menu">
         <nav>
             <ul>
