@@ -1,0 +1,169 @@
+/* Permet d'avoir une image en fond d'écran*/
+body{
+    background-image: url("images/parc-bagatelle.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; /* Couvre la zone du site */
+    background-position: center;
+   }
+   .z1{
+     border-radius: 25px;
+     margin:auto;
+     height:4.5em;
+     width:100em;
+   }
+   
+   .textepresentation{
+     margin: 0.2em 0em 0em 0em;
+     text-align: center;
+     font-size: 4em;
+     color:white;
+     font-weight: bold;
+     font-family: 'OnePlus Slate', sans-serif;
+   }
+   
+   /* Affichage des caroussels*/
+   #caroussel {
+     width: 21%;
+     overflow: hidden;
+     border: 3px solid white;
+     height: 300px;
+     margin-right: 5%;
+     margin-left: 14%;
+     margin-top: 5%;
+     float: left;
+   }
+   
+   #caroussel2 {
+     width: 21%;
+     margin-top: 5%;
+     overflow: hidden;
+     border: 3px solid white;
+     height: 300px;
+   }
+   
+   #imgAffiche {
+     width: 22%;
+     margin-right: 5%;
+     float: left;
+   }
+   
+   #imgRes1 {
+     width: 1%;
+   }
+   
+   .imagesCaroussel {
+     display: flex;
+     animation-duration: 20s;
+     animation-name: mesImages;
+     animation-iteration-count: infinite;
+   }
+   
+   .imagesCaroussel img {
+     max-width: 100%; /* Redimensionne l'image pour qu'elle ne dépasse pas la largeur du conteneur */
+     max-height: 100%; /* Redimensionne l'image pour qu'elle ne dépasse pas la hauteur du conteneur */
+   }
+   
+   @keyframes mesImages {
+     0% {
+       transform: translateX(0);
+     }
+     25% {
+       transform: translateX(-100%);
+     }
+     50% {
+       transform: translateX(-200%);
+     }
+     75% {
+       transform: translateX(-300%);
+     }
+     100% {
+       transform: translateX(0);
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 768px */
+   @media (max-width: 1300px) {
+     #caroussel {
+       height: 200px;
+     }
+     .textepresentation {
+       font-size: 2em;
+     }
+     .z1 {
+       width: 30em;
+       height:3em;
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 480px */
+   @media (max-width: 1000px) {
+     #caroussel {
+       height: 70px;
+     }
+     .textepresentation {
+       font-size: 1em;
+     }
+     .z1 {
+       width: 20em;
+       height:1.5em;
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 200px */
+   @media (max-width: 200px) {
+     #caroussel {
+       height: 100px;
+     }
+     .textepresentation {
+       font-size: 0.5em;
+       height:1em;
+     }
+     z1 {
+       width: 10em;
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 768px */
+   @media (max-width: 1300px) {
+     #caroussel2 {
+       height: 200px;
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 480px */
+   @media (max-width: 1000px) {
+     #caroussel2 {
+       height: 70px;
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 200px */
+   @media (max-width: 200px) {
+     #caroussel2 {
+       height: 100px;
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 768px */
+   @media (max-width: 1300px) {
+     #caroussel3 {
+       height: 200px;
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 480px */
+   @media (max-width: 1000px) {
+     #caroussel3 {
+       height: 70px;
+     }
+   }
+   
+   /* Pour les écrans de taille maximale de 200px */
+   @media (max-width: 200px) {
+     #caroussel3 {
+       height: 100px;
+     }
+   }
+   
+   
