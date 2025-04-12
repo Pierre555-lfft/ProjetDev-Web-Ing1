@@ -1,11 +1,13 @@
-/* Permet d'avoir une image en fond d'écran*/
-body{
-    background-image: url("images/parc-bagatelle.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; /* Couvre la zone du site */
-    background-position: center;
-   }
+/* Fond vidéo */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
 #btnAccueil {
   background-color: #7c6108;
@@ -101,7 +103,7 @@ label {
 
 h2 {
   font-size: 180%;
-  color: white;
+  color: rgb(199, 102, 11);
 }
 
 .formulaire {
@@ -110,9 +112,21 @@ h2 {
 
 .milieu h2 {
     position: absolute; /* Position absolue pour le h2 */
-    top: -1.5em; /* Déplace le h2 au-dessus de la div */
+    top: 1em; /* Déplace le h2 au-dessus de la div */
     left: 50%; /* Déplace le h2 à 50% de la largeur de la div */
     transform: translateX(-50%); /* Centre le h2 par rapport à son milieu */
     width: 100%; /* Optionnel: Donne une largeur à h2 si nécessaire */
 }
 
+/* Vidéo plein écran */
+#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+}

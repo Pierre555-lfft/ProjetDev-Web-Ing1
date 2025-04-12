@@ -12,6 +12,13 @@
     <?php
       include "hautPage.php";
     ?>
+
+    <!-- Vidéo de fond -->
+    <video autoplay muted loop id="video-background">
+      <source src="videos/montagne_russe_animation.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo HTML5.
+    </video>
+    
     <!-- Affiche la zone de connexion -->
     <div class="milieu">
     <h2>Connexion</h2>
