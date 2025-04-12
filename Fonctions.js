@@ -2,9 +2,9 @@
 function accueil() {
   window.location.href = "accueil.php";
 }
-// Redirige l'utilisateur vers l'actualite
-function actualite() {
-  window.location.href = "actualite.php";
+// Redirige l'utilisateur vers la billetterie
+function billetterie() {
+  window.location.href = "billetterie.php";
 }
 // Redirige l'utilisateur vers presentation
 function presentation() {
@@ -19,8 +19,8 @@ function galerie() {
   window.location.href = "galerie.php";
 }
 // Redirige l'utilisateur vers NousContacter
-function nousContacter() {
-  window.location.href = "NousContacter.php";
+function contact() {
+  window.location.href = "contact.php";
 }
 // Redirige l'utilisateur vers nvMembre
 function adhesion() {
@@ -74,16 +74,10 @@ function connexion() {
 function deconnexion() {
   window.location.href = "deconnexion.php";
 }
-// Redirige l'utilisateur vers objets_connectes
-function objetsConnectes() {
-  window.location.href = "objets_connectes.php";
+// Redirige l'utilisateur vers pageMembre
+function membre() {
+  window.location.href = "pageMembre.php";
 }
-
-// Redirige l'utilisateur vers billetterie
-function billetterie() {
-  window.location.href = "reservation.php";
-}
-
 // Redirige l'utilisateur vers upload
 function admin() {
   window.location.href = "upload.php";

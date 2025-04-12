@@ -1,0 +1,123 @@
+/* Permet d'avoir une image en fond d'écran*/
+body{
+    background-image: url("images/parc-bagatelle.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; /* Couvre la zone du site */
+    background-position: center;
+   }
+
+
+.btnConnexion {
+  padding: 10px 20px;
+}
+
+.btnConnexion:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+input[type="submit"], .boutton {
+    background-color: #7c5308;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover, .boutton:hover {
+    background-color: #7c6108;
+}
+
+/* Permet de design la zone contenant boutton, texte, images...*/
+.inscription {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 8%;
+    margin-right:40%;
+    margin-left: 40%;
+    text-align: center;
+    position: relative;background-color: rgba(255, 255, 255, 0.9);
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 8%;
+    margin-right:40%;
+    margin-left: 40%;
+    text-align: center;
+    position: relative;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input[type="text"],input[type="password"],textarea,select,input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0 5px;
+    box-sizing: border-box;
+    border: 1px solid rgb(204,204,204);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    color: rgb(85,85,85);
+    outline: none;
+}
+
+input[type="text"]:hover,input[type="password"]:hover,textarea:hover,select:hover {
+    border-color: rgb(170,170,170);
+}
+
+input[type="text"]:focus,input[type="password"]:focus,select:focus {
+    border-color: #a67f36;
+    box-shadow: 0 0 5px rgba(166, 136, 54, 0.5);
+}
+
+
+p, h2, label {
+  font-family: 'OnePlus Slate', sans-serif;
+}
+
+label {
+  font-size: 120%;
+}
+
+h2 {
+  font-size: 180%;
+  color: rgb(219, 106, 14);
+}
+
+.formulaire {
+  text-align: center;
+}
+
+.inscription h2 {
+    position: absolute; /* Position absolue pour le h2 */
+    top: 1.5em; /* Déplace le h2 au-dessus de la div */
+    left: 50%; /* Déplace le h2 à 50% de la largeur de la div */
+    transform: translateX(-50%); /* Centre le h2 par rapport à son milieu */
+    width: 100%; /* Optionnel: Donne une largeur à h2 si nécessaire */
+}
+
+.contact {
+  background-color: rgba(255, 255, 255, 0.9);
+    padding: 1%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2%;
+    margin-right:40%;
+    margin-left: 40%;
+    text-align: center;
+    position: relative;
+}
+
