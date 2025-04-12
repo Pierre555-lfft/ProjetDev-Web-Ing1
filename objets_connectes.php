@@ -2,7 +2,7 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté et est un membre
-if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'membre') {
+if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'membre' && $_SESSION['user'] !== 'complexe' && $_SESSION['user'] !== 'admin') {
     header('Location: connexion.php');
     exit();
 }
