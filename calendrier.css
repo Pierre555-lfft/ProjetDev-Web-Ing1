@@ -1,0 +1,165 @@
+/* Fond vidéo */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Vidéo plein écran */
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+/* Container principal */
+.calendrier-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
+    margin: 2% auto;
+    text-align: center;
+    position: relative;
+    flex: 1;
+    margin-bottom: 100px;
+}
+
+/* Style pour le titre */
+h2 {
+    font-size: 1.8em;
+    color: rgb(219, 106, 14);
+    margin-bottom: 20px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+/* Info billets */
+.info-billets {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-billets p, #prixTotal {
+    color: #7c5308;
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+.highlight {
+    color: rgb(219, 106, 14);
+    font-weight: bold;
+}
+
+/* Grille du calendrier */
+.calendrier {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+}
+
+/* Style pour chaque jour */
+.jour {
+    background-color: #7c5308;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+.jour:hover {
+    background-color: #a67f36;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.jour.active {
+    background-color: rgb(219, 106, 14);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.date {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.prix {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Style pour le bouton */
+.btnConnexion {
+    background-color: #7c5308;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+.btnConnexion:hover {
+    background-color: #a67f36;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 1024px) {
+    .calendrier-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .calendrier {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .calendrier {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .jour {
+        padding: 10px;
+    }
+
+    .date {
+        font-size: 1em;
+    }
+
+    .prix {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendrier {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
