@@ -45,7 +45,7 @@ h2 {
 }
 
 /* Style pour le paragraphe */
-p {
+.milieu p {
     color: #7c5308;
     font-size: 1.2em;
     margin-bottom: 30px;
