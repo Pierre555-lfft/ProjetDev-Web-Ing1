@@ -1,12 +1,10 @@
 /* Permet d'avoir une image en fond d'écran*/
-body{
-    background-image: url("images/parc-bagatelle.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; /* Couvre la zone du site */
-    background-position: center;
-   }
-
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* background-image: url("images/parc-bagatelle.jpg"); --> supprimé */
+  }
 
 
 /* Permet de design la zone contenant boutton, texte, images...*/
@@ -101,3 +99,15 @@ h2 {
         transform: translateX(-50%); /* Défile jusqu'à la moitié du conteneur */
     }
 }
+
+/* Vidéo plein écran */
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+    
