@@ -2,8 +2,8 @@
 // Configuration de la base de données
 $db_host = "localhost";
 $db_name = "bdd";
-$db_user = "nom_utilisateur_mysql";
-$db_pass = "mot_de_passe_mysql";
+$db_user = "Lucas";
+$db_pass = "luKm@9025";
 
 // Connexion à la base de données
 try {

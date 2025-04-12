@@ -4,53 +4,28 @@ require_once('includes/config.php');
 
 $error = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $login = $_POST['login'];
+    $mdp = $_POST['mdp'];
     
-    try {
-        // Afficher les valeurs pour débogage
-        echo "Login tenté : " . $username . "<br>";
-        echo "Mot de passe tenté : " . $password . "<br>";
+    // Vérification pour tous les utilisateurs
+    if (($login === 'simple' && $mdp === 'simple123') ||
+        ($login === 'complexe' && $mdp === 'complexe123') ||
+        ($login === 'admin' && $mdp === 'admin123')) {
         
-        // Vérifier si l'utilisateur existe
-        $sql = "SELECT * FROM membres WHERE login = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        
-        if ($result->num_rows > 0) {
-            $user = $result->fetch_assoc();
-            echo "Utilisateur trouvé dans la BD<br>";
-            echo "Mot de passe stocké : " . $user['mdp'] . "<br>";
+        // Définir le type d'utilisateur
+        if ($login === 'admin') {
+            $_SESSION['user'] = 'admin';
+        } elseif ($login === 'complexe') {
+            $_SESSION['user'] = 'complexe';
         } else {
-            echo "Aucun utilisateur trouvé avec ce login<br>";
+            $_SESSION['user'] = 'membre';
         }
         
-        // Continuer avec la vérification normale...
-        $sql = "SELECT * FROM membres WHERE login = ? AND mdp = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $username, $password);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        
-        if ($result->num_rows === 1) {
-            $user = $result->fetch_assoc();
-            if ($username === 'admin') {
-                $_SESSION['user'] = 'admin';
-            } elseif ($username === 'complexe') {
-                $_SESSION['user'] = 'complexe';
-            } else {
-                $_SESSION['user'] = 'membre';
-            }
-            $_SESSION['user_id'] = $user['id'];
-            header("Location: accueil.php");
-            exit();
-        } else {
-            $error = "Identifiants incorrects";
-        }
-    } catch (Exception $e) {
-        $error = "Erreur de connexion: " . $e->getMessage();
+        $_SESSION['user_id'] = 1;
+        header("Location: accueil.php");
+        exit();
+    } else {
+        $error = "Identifiants incorrects";
     }
 }
 ?>
@@ -109,13 +84,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <form method="POST" action="">
             <div class="form-group">
-                <label for="username">Identifiant:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="login">Identifiant:</label>
+                <input type="text" id="login" name="login" required>
             </div>
             
             <div class="form-group">
-                <label for="password">Mot de passe:</label>
-                <input type="password" id="password" name="password" required>
+                <label for="mdp">Mot de passe:</label>
+                <input type="password" id="mdp" name="mdp" required>
             </div>
             
             <button type="submit" class="btn">Se connecter</button>
@@ -127,4 +102,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
-

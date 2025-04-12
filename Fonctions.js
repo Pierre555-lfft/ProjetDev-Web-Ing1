@@ -75,9 +75,15 @@ function deconnexion() {
   window.location.href = "deconnexion.php";
 }
 // Redirige l'utilisateur vers objets_connectes
-function membre() {
+function objetsConnectes() {
   window.location.href = "objets_connectes.php";
 }
+
+// Redirige l'utilisateur vers billetterie
+function billetterie() {
+  window.location.href = "reservation.php";
+}
+
 // Redirige l'utilisateur vers upload
 function admin() {
   window.location.href = "upload.php";

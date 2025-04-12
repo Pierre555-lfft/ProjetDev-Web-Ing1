@@ -1,0 +1,103 @@
+/* Permet d'avoir une image en fond d'écran*/
+body{
+    background-image: url("images/parc-bagatelle.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; /* Couvre la zone du site */
+    background-position: center;
+   }
+
+
+
+/* Permet de design la zone contenant boutton, texte, images...*/
+.milieu {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: 2%;
+    text-align: center;
+    position: relative;
+    width: 40%;
+}
+
+
+
+
+p, h2 {
+  font-family: 'OnePlus Slate', sans-serif;
+}
+
+
+
+h2 {
+  font-size: 180%;
+  color: rgb(212, 106, 18);
+}
+
+
+
+.milieu h2 {
+    position: absolute; /* Position absolue pour le h2 */
+    top: 1.5em; /* Déplace le h2 au-dessus de la div */
+    left: 50%; /* Déplace le h2 à 50% de la largeur de la div */
+    transform: translateX(-50%); /* Centre le h2 par rapport à son milieu */
+    width: 100%; /* Optionnel: Donne une largeur à h2 si nécessaire */
+}
+
+.plan {
+    width: 80%;
+    height: 400px;
+    margin: 20px auto; /* Marge réduite pour rapprocher du bas de page */
+    position: relative;
+    clear: both;
+}
+
+.plan iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-container {
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-images {
+    display: flex;
+    width: 800%; /* 100% pour chaque image (8 images) */
+    animation: slideShow 30s linear infinite;
+}
+
+.carousel-images img {
+    width: 12.5%; /* Chaque image prend 12.5% de la largeur totale (100/8) */
+    height: 300px;
+    object-fit: cover;
+}
+
+@keyframes slideShow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Défile jusqu'à la moitié du conteneur */
+    }
+}
