@@ -35,7 +35,7 @@
                 <img src="images/attraction1.jpg" alt="Attraction 1">
                 <img src="images/attraction2.jpeg" alt="Attraction 2">
                 <img src="images/attraction3.jpg" alt="Attraction 3">
-                <img src="images/attraction4.jpeg" alt="Attraction 4">
+                <img src="images/attraction4.jpg" alt="Attraction 4">
             </div>
         </div>
     </div>
