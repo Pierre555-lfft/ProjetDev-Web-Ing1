@@ -1,11 +1,9 @@
-/* Permet d'avoir une image en fond d'écran*/
-body{
-    background-image: url("images/parc-bagatelle.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; /* Couvre la zone du site */
-    background-position: center;
-   }
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* background-image: url("images/parc-bagatelle.jpg"); --> supprimé */
+}
    .z1{
     background-color: rgba(228, 150, 90, 0.8);
      border-radius: 25px;
@@ -24,4 +22,14 @@ body{
      font-family: 'OnePlus Slate', sans-serif;
    }
    
+   /* Vidéo plein écran */
+#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
   

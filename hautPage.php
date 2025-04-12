@@ -22,7 +22,7 @@
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'accueil' ? 'active' : ''; ?>" onclick="accueil()">Accueil</button> <!-- active permet d'indiquer la page active afin de changer sa couleur -->
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'presentation' ? 'active' : ''; ?>" onclick="presentation()">Présentation</button>
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'billetterie' ? 'active' : ''; ?>" onclick="billetterie()">Billetterie</button>
-                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'activite' ? 'active' : ''; ?>" onclick="activite()">Activités</button>
+                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'tarifs' ? 'active' : ''; ?>" onclick="tarifs()">Tarifs</button>
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'objets_connectes' ? 'active' : ''; ?>" onclick="objets_connectes()">Objets Connectés</button>
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'contact' ? 'active' : ''; ?>" onclick="contact()">Nous Contacter</button>
                     <?php

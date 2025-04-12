@@ -4,43 +4,7 @@
         <title>Accueil - Parc d'attractions</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="accueil.css">
-        <style>
-            /* Styles spécifiques repris de index.html */
-         /*   .banner {
-                background-image: url('pageaccueil.png');
-                background-size: cover;
-                height: 500px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                text-align: center;
-            }
-
-            .attractions-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 20px;
-                padding: 20px;
-            }
-
-            .attraction-card {
-                background: white;
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            }
-
-            .attraction-card img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-            }
-
-            .attraction-info {
-                padding: 20px;
-            }*/
-        </style>
+        <link rel="icon" href="logo.jpeg">
         <!-- lien pour le logo de page-->
         <link rel="icon" href="logo.jpeg">
     </head>
@@ -49,6 +13,12 @@
       <?php
       include "hautPage.php";
       ?>
+       <!-- Vidéo de fond -->
+    <video autoplay muted loop id="video-background">
+      <source src="videos/montagne_russe_animation.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo HTML5.
+    </video>
+
       <br>
       <!-- Titre de présentation -->
       <div class="z1">

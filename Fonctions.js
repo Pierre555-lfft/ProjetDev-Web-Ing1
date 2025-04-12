@@ -10,9 +10,9 @@ function billetterie() {
 function presentation() {
   window.location.href = "presentation.php";
 }
-// Redirige l'utilisateur vers activite
-function activite() {
-  window.location.href = "activite.php";
+// Redirige l'utilisateur vers tarifs
+function tarifs() {
+  window.location.href = "tarifs.php";
 }
 // Redirige l'utilisateur vers galerie
 function objets_connectes() {
