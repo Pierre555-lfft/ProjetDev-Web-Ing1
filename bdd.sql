@@ -1,16 +1,42 @@
--- Suppression et création de la base de données
-DROP DATABASE IF EXISTS bdd;
-CREATE DATABASE bdd;
-USE bdd;
+-- Réinitialisation de la base
+DROP DATABASE IF EXISTS parc;
+CREATE DATABASE parc;
+USE parc;
 
--- Table des membres (utilisateurs)
-CREATE TABLE membres (
+-- Suppression des tables si elles existent
+DROP TABLE IF EXISTS visiteurs;
+DROP TABLE IF EXISTS reservations;
+DROP TABLE IF EXISTS profils_visiteurs;
+DROP TABLE IF EXISTS membres;
+DROP TABLE IF EXISTS admin;
+
+-- Table admin
+CREATE TABLE admin (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    login VARCHAR(50) NOT NULL UNIQUE,
+    login VARCHAR(50) NOT NULL,
     mdp VARCHAR(255) NOT NULL
 );
 
--- Table des profils visiteurs
+-- Donnée de test admin
+INSERT INTO admin (login, mdp) VALUES ('admin', MD5('1234'));
+
+-- Table membres fusionnée
+CREATE TABLE membres (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    mdp VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    nom VARCHAR(100),
+    prenom VARCHAR(100),
+    adresse VARCHAR(255),
+    date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Donnée de test membre
+INSERT INTO membres (login, mdp, email, nom, prenom, adresse)
+VALUES ('membre', MD5('admin'), 'admin@example.com', 'admin', 'admin', '123 rue des Fleurs');
+
+-- Table profils_visiteurs
 CREATE TABLE profils_visiteurs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -20,10 +46,10 @@ CREATE TABLE profils_visiteurs (
     sexe ENUM('M', 'F', 'Autre') NOT NULL,
     age INT NOT NULL,
     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES membres(id)
+    FOREIGN KEY (user_id) REFERENCES membres(id) ON DELETE CASCADE
 );
 
--- Table des réservations
+-- Table reservations
 CREATE TABLE reservations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -32,42 +58,12 @@ CREATE TABLE reservations (
     qr_code VARCHAR(255),
     statut ENUM('en_attente', 'payee', 'utilisee') DEFAULT 'en_attente',
     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES membres(id)
+    FOREIGN KEY (user_id) REFERENCES membres(id) ON DELETE CASCADE
 );
 
+-- Table visiteurs
 CREATE TABLE visiteurs (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    reservation_id INT,
-    type ENUM('adult', 'child', 'senior'),
-    nom VARCHAR(100),
-    prenom VARCHAR(100),
-    age INT,
-    taille INT,
-    date_visite DATE,
-    qr_code VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (reservation_id) REFERENCES reservations(id)
-);
-
--- Insertion des utilisateurs de test
-INSERT INTO membres (login, mdp) VALUES 
-('simple', 'simple123'),
-('complexe', 'complexe123'),
-('admin', 'admin123'); 
-
--- Création des tables nécessaires
-CREATE TABLE IF NOT EXISTS reservations (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT NOT NULL,
-    date_visite DATE NOT NULL,
-    montant DECIMAL(10,2) NOT NULL,
-    statut VARCHAR(20) NOT NULL DEFAULT 'payee',
-    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES membres(id)
-) ENGINE=InnoDB;
-
-CREATE TABLE IF NOT EXISTS visiteurs (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     reservation_id INT NOT NULL,
     type ENUM('adult', 'child', 'senior') NOT NULL,
     nom VARCHAR(100) NOT NULL,
@@ -77,21 +73,5 @@ CREATE TABLE IF NOT EXISTS visiteurs (
     date_visite DATE NOT NULL,
     qr_code VARCHAR(255),
     date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (reservation_id) REFERENCES reservations(id)
-) ENGINE=InnoDB;
-
--- Vérifier que la table membres existe et a la bonne structure
-CREATE TABLE IF NOT EXISTS membres (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
-
--- Accorder les permissions nécessaires (à exécuter en tant qu'administrateur MySQL)
-GRANT SELECT, INSERT, UPDATE ON bdd.* TO 'Lucas'@'localhost';
-FLUSH PRIVILEGES;
-
-ALTER TABLE visiteurs
-ADD COLUMN qr_code VARCHAR(255) NULL;
+    FOREIGN KEY (reservation_id) REFERENCES reservations(id) ON DELETE CASCADE
+);
