@@ -1,4 +1,12 @@
-/* Permet de régler le bas de page */
+/* Style pour le corps de la page */
+body {
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    padding-bottom: 8em; /* Espace pour le bas de page */
+}
+
+/* Style pour le bas de page */
 .bas {
     position: absolute;
     width: 100%;
@@ -12,13 +20,14 @@
     text-align: center;
     font-size: 0.8em;
     line-height: 2em;
-  }
-  
-  /* Permet de design les liens */
-  a {
+    z-index: 1000; /* S'assure que le bas de page est toujours au-dessus */
+}
+
+/* Style pour les liens */
+a {
     color: white;
     text-decoration: none;
     text-decoration: underline;
-  }
+}
   
   
