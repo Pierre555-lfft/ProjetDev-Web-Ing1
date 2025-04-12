@@ -3,10 +3,10 @@
     <head>
         <title>Accueil - Parc d'attractions</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="accueil.css">
         <style>
             /* Styles spécifiques repris de index.html */
-            .banner {
+         /*   .banner {
                 background-image: url('pageaccueil.png');
                 background-size: cover;
                 height: 500px;
@@ -39,7 +39,7 @@
 
             .attraction-info {
                 padding: 20px;
-            }
+            }*/
         </style>
         <!-- lien pour le logo de page-->
         <link rel="icon" href="logo.jpeg">
@@ -52,7 +52,7 @@
       <br>
       <!-- Titre de présentation -->
       <div class="z1">
-        <p class="textepresentation">Parc d'attraction</p>
+        <p class="textepresentation">Bienvenue dans notre Parc d'Attractions</p>
       </div>
       <br>
       
@@ -63,8 +63,7 @@
 
     <div class="banner">
         <div>
-            <h1>Bienvenue dans notre Parc d'Attractions</h1>
-            <p>Découvrez un monde d'émotions et de technologies</p>
+            
         </div>
     </div>
 
