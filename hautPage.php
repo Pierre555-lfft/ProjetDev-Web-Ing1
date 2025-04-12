@@ -23,7 +23,7 @@
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'presentation' ? 'active' : ''; ?>" onclick="presentation()">Présentation</button>
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'billetterie' ? 'active' : ''; ?>" onclick="billetterie()">Billetterie</button>
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'activite' ? 'active' : ''; ?>" onclick="activite()">Activités</button>
-                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'galerie' ? 'active' : ''; ?>" onclick="galerie()">Objets Connectés</button>
+                    <button type="submit" class="bouttonMenu <?php echo $current_page == 'objets_connectes' ? 'active' : ''; ?>" onclick="objets_connectes()">Objets Connectés</button>
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'contact' ? 'active' : ''; ?>" onclick="contact()">Nous Contacter</button>
                     <?php
                         if ($_SESSION['user'] === 'admin') {
