@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Présentation du parc</title>
-    <link rel="icon" href="images/logo.jpeg">
+    
     <!-- lien pour le logo de page-->
     <link rel="stylesheet" href="presentation.css">
     <script type="text/javascript" src="Fonctions.js"></script>
@@ -54,7 +54,10 @@
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
 </div>
-
+<!-- Inclusion du bas de page -->
+<?php
+      include "basPage.php";
+    ?>
   </body>
   
 </html>
