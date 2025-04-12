@@ -37,12 +37,18 @@
     <div class="inscription">
     <h2>S'inscrire</h2>
     
-     <form class="formulaire" action="verifierConnexion.php" method="POST">
-       <label for="login">Nom</label>
-       <p><input type="text" name="login"></p>
+     <form class="formulaire" action="inscriptionBDD.php" method="POST">
+       <label for="nom">Nom</label>
+       <p><input type="text" name="nom" id="nom" required></p>
        <br>
-       <label for="mdp">Prénom</label>
-       <p><input type="password" name="mdp"></p>
+       <label for="prenom">Prénom</label>
+       <p><input type="text" name="prenom" id="prenom" required></p>
+       <br>
+       <label for="age">Age</label>
+       <p><input type="number" name="age" id="age" min="1" max="120" required></p>
+       <br>
+       <label for="email">Adresse email</label>
+       <p><input type="email" name="email" id="email" required></p>
        <br>
        <p><input class="btnConnexion" type="submit" value="Envoyer"></p>
        <br>

@@ -1,123 +1,164 @@
-/* Permet d'avoir une image en fond d'écran*/
-body{
+/* Fond d'écran */
+body {
     background-image: url("images/parc-bagatelle.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover; /* Couvre la zone du site */
+    background-size: cover;
     background-position: center;
-   }
-
-
-.btnConnexion {
-  padding: 10px 20px;
 }
 
-.btnConnexion:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-input[type="submit"], .boutton {
-    background-color: #7c5308;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover, .boutton:hover {
-    background-color: #7c6108;
-}
-
-/* Permet de design la zone contenant boutton, texte, images...*/
-.inscription {
+/* Styles communs pour les conteneurs */
+.contact, .inscription {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 5%;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 8%;
-    margin-right:40%;
-    margin-left: 40%;
-    text-align: center;
-    position: relative;background-color: rgba(255, 255, 255, 0.9);
-    padding: 5%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 8%;
-    margin-right:40%;
-    margin-left: 40%;
+    margin: 2% auto;
     text-align: center;
     position: relative;
 }
 
-.input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+/* Style spécifique pour la section contact */
+.contact {
+    width: 300px;
+    margin-bottom: 30px;
 }
 
-input[type="text"],input[type="password"],textarea,select,input[type="date"] {
+/* Style spécifique pour la section inscription */
+.inscription {
+    width: 400px;
+}
+
+/* Style pour les titres */
+h2 {
+    font-size: 1.8em;
+    color: rgb(219, 106, 14);
+    margin-bottom: 20px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+/* Style pour les labels */
+label {
+    font-size: 1.2em;
+    font-family: 'OnePlus Slate', sans-serif;
+    color: #7c5308;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style pour tous les champs de saisie */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
     width: 100%;
-    padding: 10px;
-    margin: 0 5px;
+    padding: 12px;
+    margin: 8px 0;
     box-sizing: border-box;
-    border: 1px solid rgb(204,204,204);
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     background-color: #FFFFFF;
-    color: rgb(85,85,85);
+    color: #555;
     outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input[type="text"]:hover,input[type="password"]:hover,textarea:hover,select:hover {
-    border-color: rgb(170,170,170);
-}
-
-input[type="text"]:focus,input[type="password"]:focus,select:focus {
+/* Style au survol des champs */
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+textarea:hover,
+select:hover {
     border-color: #a67f36;
+}
+
+/* Style au focus des champs */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #7c5308;
     box-shadow: 0 0 5px rgba(166, 136, 54, 0.5);
 }
 
-
-p, h2, label {
-  font-family: 'OnePlus Slate', sans-serif;
+/* Style pour le bouton d'envoi */
+.btnConnexion {
+    background-color: #7c5308;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 15px;
 }
 
-label {
-  font-size: 120%;
+/* Style au survol du bouton */
+.btnConnexion:hover {
+    background-color: #a67f36;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
-  font-size: 180%;
-  color: rgb(219, 106, 14);
+/* Style pour les images des réseaux sociaux */
+#imgRes1, #imgRes2, #imgRes3 {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 15px 0;
+    transition: transform 0.3s;
 }
 
-.formulaire {
-  text-align: center;
+/* Animation au survol des images */
+#imgRes1:hover, #imgRes2:hover, #imgRes3:hover {
+    transform: scale(1.1);
 }
 
-.inscription h2 {
-    position: absolute; /* Position absolue pour le h2 */
-    top: 1.5em; /* Déplace le h2 au-dessus de la div */
-    left: 50%; /* Déplace le h2 à 50% de la largeur de la div */
-    transform: translateX(-50%); /* Centre le h2 par rapport à son milieu */
-    width: 100%; /* Optionnel: Donne une largeur à h2 si nécessaire */
+/* Style pour les textes des réseaux sociaux */
+#Facebook, #Instagram, #Mail {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #7c5308;
+    font-weight: bold;
+    font-family: 'OnePlus Slate', sans-serif;
 }
 
-.contact {
-  background-color: rgba(255, 255, 255, 0.9);
-    padding: 1%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 2%;
-    margin-right:40%;
-    margin-left: 40%;
-    text-align: center;
-    position: relative;
+/* Espacement entre les éléments */
+br {
+    display: block;
+    margin: 5px 0;
+}
+
+/* Style pour les messages d'erreur éventuels */
+.error-message {
+    color: #ff4444;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    .contact, .inscription {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"] {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
 }
 
