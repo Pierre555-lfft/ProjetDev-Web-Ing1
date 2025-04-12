@@ -1,0 +1,167 @@
+/* Fond d'écran */
+body {
+    background-image: url("images/parc-bagatelle.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container principal */
+.billetterie-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 2% auto;
+    text-align: center;
+    position: relative;
+}
+
+/* Styles des titres */
+h2 {
+    font-size: 1.8em;
+    color: rgb(219, 106, 14);
+    margin-bottom: 30px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+h3 {
+    color: #7c5308;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+/* Style pour chaque groupe de tarif */
+.tarif-group {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Style pour chaque ligne de tarif */
+.tarif {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.tarif:last-child {
+    border-bottom: none;
+}
+
+/* Style pour les labels */
+.tarif label {
+    font-size: 1.1em;
+    color: #7c5308;
+    font-family: 'OnePlus Slate', sans-serif;
+    flex: 2;
+    text-align: left;
+}
+
+/* Style pour les prix */
+.prix {
+    color: #7c5308;
+    font-weight: bold;
+    font-size: 1.1em;
+    flex: 1;
+}
+
+/* Style pour les conteneurs d'input */
+.input-container {
+    flex: 1;
+}
+
+/* Style pour les inputs number */
+input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+    border-color: #7c5308;
+    box-shadow: 0 0 5px rgba(166, 136, 54, 0.5);
+}
+
+/* Style pour la section total */
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.total-label {
+    color: #7c5308;
+}
+
+#total-price {
+    color: rgb(219, 106, 14);
+    font-size: 1.3em;
+}
+
+/* Style pour le bouton de continuation */
+.btnConnexion {
+    background-color: #7c5308;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: auto;
+}
+
+.btnConnexion:hover {
+    background-color: #a67f36;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    .billetterie-container {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .tarif {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .tarif label {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .prix {
+        margin: 5px 0;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        max-width: 200px;
+    }
+}
