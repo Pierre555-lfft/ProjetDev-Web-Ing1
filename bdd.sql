@@ -3,38 +3,31 @@ DROP DATABASE IF EXISTS parc;
 CREATE DATABASE parc;
 USE parc;
 
--- Suppression des tables si elles existent
+-- Suppression des anciennes tables si elles existent
 DROP TABLE IF EXISTS visiteurs;
 DROP TABLE IF EXISTS reservations;
 DROP TABLE IF EXISTS profils_visiteurs;
-DROP TABLE IF EXISTS membres;
-DROP TABLE IF EXISTS admin;
+DROP TABLE IF EXISTS utilisateurs;
 
--- Table admin
-CREATE TABLE admin (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    login VARCHAR(50) NOT NULL,
-    mdp VARCHAR(255) NOT NULL
-);
-
--- Donnée de test admin
-INSERT INTO admin (login, mdp) VALUES ('admin', MD5('1234'));
-
--- Table membres fusionnée
-CREATE TABLE membres (
+-- Table utilisateurs avec les types de comptes ajustés (sans 'gestionnaire')
+CREATE TABLE utilisateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     login VARCHAR(50) NOT NULL UNIQUE,
     mdp VARCHAR(255) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(100),
     nom VARCHAR(100),
     prenom VARCHAR(100),
     adresse VARCHAR(255),
-    date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    type_compte ENUM('client', 'client_complet', 'employe', 'admin') NOT NULL,
+    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Donnée de test membre
-INSERT INTO membres (login, mdp, email, nom, prenom, adresse)
-VALUES ('membre', MD5('admin'), 'admin@example.com', 'admin', 'admin', '123 rue des Fleurs');
+-- Exemples d'insertion
+INSERT INTO utilisateurs (login, mdp, type_compte)
+VALUES ('admin', MD5('1234'), 'admin');
+
+INSERT INTO utilisateurs (login, mdp, email, nom, prenom, adresse, type_compte)
+VALUES ('client1', MD5('client123'), 'client1@example.com', 'Doe', 'John', '123 rue des Fleurs', 'client');
 
 -- Table profils_visiteurs
 CREATE TABLE profils_visiteurs (
@@ -46,7 +39,7 @@ CREATE TABLE profils_visiteurs (
     sexe ENUM('M', 'F', 'Autre') NOT NULL,
     age INT NOT NULL,
     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES membres(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES utilisateurs(id) ON DELETE CASCADE
 );
 
 -- Table reservations
@@ -58,7 +51,7 @@ CREATE TABLE reservations (
     qr_code VARCHAR(255),
     statut ENUM('en_attente', 'payee', 'utilisee') DEFAULT 'en_attente',
     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES membres(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES utilisateurs(id) ON DELETE CASCADE
 );
 
 -- Table visiteurs
