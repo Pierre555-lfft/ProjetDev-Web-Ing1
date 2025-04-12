@@ -15,8 +15,8 @@ function activite() {
   window.location.href = "activite.php";
 }
 // Redirige l'utilisateur vers galerie
-function galerie() {
-  window.location.href = "galerie.php";
+function objets_connectes() {
+  window.location.href = "objets_connectes.php";
 }
 // Redirige l'utilisateur vers NousContacter
 function contact() {
@@ -199,3 +199,17 @@ document.getElementById('pptxInput').addEventListener('change', function(event) 
     reader.readAsDataURL(file);
 });
 
+ // Calcul du total en temps réel du fichier billeterie.php
+ document.querySelectorAll('input[type="number"]').forEach(input => {
+  input.addEventListener('change', calculateTotal);
+});
+
+function calculateTotal() {
+  const adultes = document.getElementById('adultes').value * 52;
+  const enfants = document.getElementById('enfants').value * 44;
+  const seniors = document.getElementById('seniors').value * 44;
+  const reduits = document.getElementById('reduits').value * 44;
+  
+  const total = adultes + enfants + seniors + reduits;
+  document.getElementById('total-price').textContent = total + ' €';
+}
