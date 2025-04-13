@@ -27,7 +27,7 @@ INSERT INTO utilisateurs (login, mdp, type_compte)
 VALUES ('admin', MD5('1234'), 'admin');
 
 INSERT INTO utilisateurs (login, mdp, email, nom, prenom, adresse, type_compte)
-VALUES ('client1', MD5('client123'), 'client1@example.com', 'Doe', 'John', '123 rue des Fleurs', 'client');
+VALUES ('client1', MD5('client123'), 'laforestpierre1@gmail.com', 'Doe', 'John', '123 rue des Fleurs', 'client');
 
 -- Table profils_visiteurs
 CREATE TABLE profils_visiteurs (

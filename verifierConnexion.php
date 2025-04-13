@@ -33,8 +33,10 @@ if (!empty($_POST['login']) && !empty($_POST['mdp'])) {
                 header('Location: employe.php');
                 break;
             case 'client_complet':
+                header('Location: accueil.php');
+                break;
             case 'client':
-                header('Location: client.php');
+                header('Location: accueil.php');
                 break;
             default:
                 header('Location: connexion.php?erreur=role');
