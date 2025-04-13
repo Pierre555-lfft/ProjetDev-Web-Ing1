@@ -4,8 +4,8 @@
     <title>Tarifs</title>
     
     <!-- lien pour le logo de page-->
-    <link rel="stylesheet" href="tarifs.css">
-    <script type="text/javascript" src="Fonctions.js"></script>
+    <link rel="stylesheet" href="../css/tarifs.css">
+    <script type="text/javascript" src="../js/Fonctions.js"></script>
 </head>
 <body>
    <!-- Inclusion du haut de page -->
@@ -14,7 +14,7 @@
     ?>
     <!-- Vidéo de fond -->
     <video autoplay muted loop id="video-background">
-      <source src="videos/montagne_russe_animation.mp4" type="video/mp4">
+      <source src="../videos/montagne_russe_animation.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la vidéo HTML5.
     </video>
 

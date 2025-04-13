@@ -3,10 +3,10 @@
     <head>
         <title>Accueil - Parc d'attractions</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="accueil.css">
-        <link rel="icon" href="logo.jpeg">
+        <link rel="stylesheet" href="../css/accueil.css">
+        <link rel="icon" href="../images/logo.jpeg">
         <!-- lien pour le logo de page-->
-        <link rel="icon" href="logo.jpeg">
+        <link rel="icon" href="../images/logo.jpeg">
     </head>
     <body>
       <!-- Inclusion du fichier hautPage.php pour afficher le menu -->
@@ -15,7 +15,7 @@
       ?>
        <!-- Vidéo de fond -->
     <video autoplay muted loop id="video-background">
-      <source src="videos/montagne_russe_animation.mp4" type="video/mp4">
+      <source src="../videos/montagne_russe_animation.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la vidéo HTML5.
     </video>
 

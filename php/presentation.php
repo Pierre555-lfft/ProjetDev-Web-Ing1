@@ -4,8 +4,8 @@
     <title>Présentation du parc</title>
     
     <!-- lien pour le logo de page-->
-    <link rel="stylesheet" href="presentation.css">
-    <script type="text/javascript" src="Fonctions.js"></script>
+    <link rel="stylesheet" href="../css/presentation.css">
+    <script type="text/javascript" src="../js/Fonctions.js"></script>
 </head>
 <body>
    <!-- Inclusion du haut de page -->
@@ -15,7 +15,7 @@
 
     <!-- Vidéo de fond -->
     <video autoplay muted loop id="video-background">
-      <source src="videos/montagne_russe_animation.mp4" type="video/mp4">
+      <source src="../videos/montagne_russe_animation.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la vidéo HTML5.
     </video>
     
@@ -39,10 +39,10 @@
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-images">
-                <img src="images/attraction1.jpg" alt="Attraction 1">
-                <img src="images/attraction2.jpeg" alt="Attraction 2">
-                <img src="images/attraction3.jpg" alt="Attraction 3">
-                <img src="images/attraction4.jpg" alt="Attraction 4">
+                <img src="../images/attraction1.jpg" alt="Attraction 1">
+                <img src="../images/attraction2.jpeg" alt="Attraction 2">
+                <img src="../images/attraction3.jpg" alt="Attraction 3">
+                <img src="../images/attraction4.jpg" alt="Attraction 4">
             </div>
         </div>
     </div>

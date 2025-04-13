@@ -4,8 +4,8 @@
     <title>NousContacter</title>
     
     <!-- lien pour le logo de page-->
-    <link rel="stylesheet" href="contact.css">
-    <script type="text/javascript" src="Fonctions.js"></script>
+    <link rel="stylesheet" href="../css/contact.css">
+    <script type="text/javascript" src="../js/Fonctions.js"></script>
 </head>
 <body>
    <!-- Inclusion du haut de page -->
@@ -15,7 +15,7 @@
 
     <!-- Vidéo de fond -->
     <video autoplay muted loop id="video-background">
-      <source src="videos/montagne_russe_animation.mp4" type="video/mp4">
+      <source src="../videos/montagne_russe_animation.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la vidéo HTML5.
     </video>
     
@@ -24,17 +24,17 @@
       <br>
       <p id="Facebook"> Notre Facebook</p>
       <br>
-      <img id="imgRes1" src="images/facebook.png">
+        <img id="imgRes1" src="../images/facebook.png">
       <br>
       <br>
       <p id="Instagram">Notre Instagram</p>
       <br>
-      <img id="imgRes2" src="images/instagram.png">
+      <img id="imgRes2" src="../images/instagram.png">
       <br>
       <br>
       <p id="Mail">Notre Mail</p>
       <br>
-      <img id="imgRes3" src="images/mail.png">
+      <img id="imgRes3" src="../images/mail.png">
 
       
       <div class="messages">

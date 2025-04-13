@@ -3,7 +3,7 @@
     <head>
         <title>Bas de page</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="basPage.css" />
+        <link rel="stylesheet" type="text/css" href="../css/basPage.css" />
         <!-- lien pour le logo de page-->
     </head>
     <body>

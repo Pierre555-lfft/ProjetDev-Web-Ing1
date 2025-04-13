@@ -3,10 +3,10 @@
 <head>
     <title>en travaux</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="hautPage.css" />
+    <link rel="stylesheet" type="text/css" href="../css/hautPage.css" />
     <!-- lien pour le logo de page-->
-    <link rel="icon" href="images/logo3.jpg">
-    <script type="text/javascript" src="Fonctions.js"></script>
+    <link rel="icon" href="../images/logo3.jpg">
+    <script type="text/javascript" src="../js/Fonctions.js"></script>
 </head>
 <body>
     <?php
@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li>
-                    <img class="logo" src="images/logo3.jpg" />
+                    <img class="logo" src="../images/logo3.jpg" />
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'accueil' ? 'active' : ''; ?>" onclick="accueil()">Accueil</button> <!-- active permet d'indiquer la page active afin de changer sa couleur -->
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'presentation' ? 'active' : ''; ?>" onclick="presentation()">Présentation</button>
                     
@@ -27,23 +27,23 @@
                     <button type="submit" class="bouttonMenu <?php echo $current_page == 'contact' ? 'active' : ''; ?>" onclick="contact()">Nous Contacter</button>
                     <?php
                         if ($_SESSION['user'] === 'admin') {
-                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'pageMembre' ? 'active' : '') . "' onclick='membre()'>Espace Client</button>";
+                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'espaceClient' ? 'active' : '') . "' onclick='espaceClient()'>Espace Client</button>";
                             echo "<button type='submit' class='bouttonMenu " . ($current_page == 'admin' ? 'active' : '') . "' onclick='admin()'>Espace Admin</button>";
                             echo "<button type='submit' class='bouttonMenu " . ($current_page == 'obljets_connectes' ? 'active' : '') . "' onclick='objets_connectes()'>Objets Connectés</button>";
                             echo "<button type='submit' class='bouttonMenu " . ($current_page == 'billetterie' ? 'active' : '') . "' onclick='billetterie()'>Billetterie</button>";
                         }
                         if ($_SESSION['user'] === 'client') {
-                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'pageMembre' ? 'active' : '') . "' onclick='membre()'>Espace Client</button>";
+                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'espaceClient' ? 'active' : '') . "' onclick='espaceClient()'>Espace Client</button>";
                             
                             echo "<button type='submit' class='bouttonMenu " . ($current_page == 'billetterie' ? 'active' : '') . "' onclick='billetterie()'>Billetterie</button>";
                         }
                         if ($_SESSION['user'] === 'client_complet') {
-                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'gerer' ? 'active' : '') . "' onclick='gerer()'>Espace Client complexe</button>";
+                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'espaceClient' ? 'active' : '') . "' onclick='espaceClient()'>Espace Client complexe</button>";
                             echo "<button type='submit' class='bouttonMenu " . ($current_page == 'obljets_connectes' ? 'active' : '') . "' onclick='objets_connectes()'>Objets Connectés</button>";
                             echo "<button type='submit' class='bouttonMenu " . ($current_page == 'billetterie' ? 'active' : '') . "' onclick='billetterie()'>Billetterie</button>";
                         }
                         if ($_SESSION['user'] === 'employe') {
-                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'gerer' ? 'active' : '') . "' onclick='gerer()'>Espace Client complexe</button>";
+                            echo "<button type='submit' class='bouttonMenu " . ($current_page == 'espaceClient' ? 'active' : '') . "' onclick='espaceClient()'>Espace Client complexe</button>";
                         }
                     ?>
                 </li>

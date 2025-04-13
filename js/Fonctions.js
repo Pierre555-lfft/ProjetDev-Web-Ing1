@@ -75,8 +75,8 @@ function deconnexion() {
   window.location.href = "deconnexion.php";
 }
 // Redirige l'utilisateur vers pageMembre
-function membre() {
-  window.location.href = "pageMembre.php";
+function espaceClient() {
+  window.location.href = "espaceClient.php";
 }
 // Redirige l'utilisateur vers upload
 function admin() {
@@ -95,40 +95,6 @@ setTimeout(function() {
     }
 }, 5000); // Disparaît après 5 secondes (5000 millisecondes)
 
-//Permet de gerer les images dans la gallerie
-document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById("myModal");
-    if (modal) {
-        var modalImg = document.getElementById("modal-image");
-        var captionText = document.getElementById("caption");
-
-        // Obtiens les images de la galerie
-        var images = document.querySelectorAll('.image-container img');
-        images.forEach(function (img) {
-            img.addEventListener('click', function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.nextElementSibling.innerHTML;
-            });
-        });
-
-        // ferme le modal
-        var span = document.getElementsByClassName("close")[0];
-        if (span) {
-            // le modal se ferme quand l'utilisateur clique sur fermer
-            span.onclick = function () {
-                modal.style.display = "none";
-            }
-        }
-
-        // Si l'utilisateur clique n'importe ou, le modal se ferme
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    }
-});
 
 //Gere les parametres du calendrier
 document.addEventListener('DOMContentLoaded', function() {
