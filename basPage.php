@@ -12,8 +12,8 @@
             
             <div class="texte">
             <!-- Lien vers les mentions légales -->
-                <p>&copy; 2025 Park attraction<p>
-              <p>&copy; Tous droits réservés a Laforest Pierre - TOUYÂA Juan-Manuel - PHANITHAVONG Manon - MARTIAL Clément - CHAPUIS Lucas</p>
+                <p>&copy; 2025 Parc attraction<p>
+              <p>&copy; Tous droits réservés a LAFOREST Pierre - TOUYÂA Juan-Manuel - PHANITHAVONG Manon - MARTIAL Clément - CHAPUIS Lucas</p>
             </div>
         	</div>
         </header>
