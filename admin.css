@@ -22,12 +22,13 @@ body {
     object-fit: cover;
 }
 
+/* Style pour la zone de bienvenue */
 .z1 {
     background-color: rgba(228, 150, 90, 0.8);
     border-radius: 25px;
     margin: 1em 2em 0 auto;
     height: auto;
-    width: auto;
+    width: 20%;
     position: relative;
     right: 0;
     float: right;
@@ -42,13 +43,180 @@ body {
     font-family: 'OnePlus Slate', sans-serif;
     padding: 10px;
 }
+
+/* Style pour la zone principale */
+.modiffier {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: 2% auto;
+    text-align: center;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+/* Style pour les titres */
+.modiffier h1 {
+    font-size: 1.8em;
+    color: rgb(219, 106, 14);
+    margin-bottom: 20px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+/* Style pour la zone des fonctionnalités */
+.zone {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.zone .titre {
+    color: #7c5308;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    font-family: 'OnePlus Slate', sans-serif;
+    font-weight: bold;
+}
+
+/* Style pour les boutons */
+.boutton, .btnDeconnexion {
+    background-color: #7c5308;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+.boutton:hover, .btnDeconnexion:hover {
+    background-color: #a67f36;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour la zone de texte */
+.textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+/* Style pour l'input file */
+#csvFileInput {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Style pour les messages de statut */
+#statusMessage {
+    color: #7c5308;
+    margin: 10px 0;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    .modiffier {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .z1 {
+        width: 40%;
+    }
+
+    .boutton, .btnDeconnexion {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .textepresentation {
+        font-size: 1.5em;
+    }
+}
+
+/* Style pour la section d'upload de fichiers */
+.file-upload-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border: 1px dashed #7c5308;
+}
+
+.file-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'OnePlus Slate', sans-serif;
+}
+
+.file-info, .file-size-info {
+    font-size: 0.9em;
+    color: #7c5308;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.file-size-info {
+    color: #a67f36;
+}
+
+/* Message d'erreur pour les fichiers trop grands */
+.file-error {
+    color: #ff4444;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
    
    
    
-   
-   
-   
-   
+/* Style pour le champ email */
+.email-settings input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'OnePlus Slate', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.email-settings input[type="email"]:focus {
+    border-color: #7c5308;
+    box-shadow: 0 0 8px rgba(124, 83, 8, 0.2);
+    outline: none;
+}
+
+.email-settings input[type="email"]:invalid {
+    border-color: #ff4444;
+}
+
+.email-settings input[type="email"]::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
    
    
    
