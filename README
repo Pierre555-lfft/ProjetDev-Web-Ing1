@@ -1,0 +1,77 @@
+# Parc d'Attractions - Système de Gestion des Objets Connectés
+
+## Description
+Ce projet est un système de gestion pour un parc d'attractions, permettant de suivre en temps réel l'état de différents objets connectés répartis dans le parc.
+
+## Fonctionnalités
+
+### Attractions
+- **Grand Huit** : État et temps d'attente
+- **Carrousel** : État et temps d'attente
+- **Chute Libre** : État et temps d'attente
+- **Château Gonflable** : État (gonflé/dégonflé)
+
+### Services
+- **Stand Photo** : Nombre de photos, galerie
+- **Vestiaire Connecté** : État, numéro, code d'accès
+- **Portiques** : État des entrées/sorties
+- **Panneaux d'Affichage** : Messages en temps réel
+- **Aspirateur Connecté** : Position et état
+
+## Structure des fichiers 
+
+## Installation
+1. Cloner le projet dans votre répertoire web
+2. Importer la base de données depuis le fichier SQL fourni
+3. Configurer les accès à la base de données dans `includes/config.php`
+4. Lancer le serveur web (XAMPP, WAMP, etc.)
+5. Accéder au projet via : `http://localhost/votre_projet/`
+
+## Configuration requise
+- PHP 7.4 ou supérieur
+- MySQL 5.7 ou supérieur
+- Serveur web (Apache recommandé)
+
+## Utilisateurs et Grades
+- **Simple** : Accès basique aux informations
+- **Complexe** : Utilisateur avec abonnement GOLD
+- **Employé** : Accès aux fonctionnalités de gestion
+- **Employé Formateur** : Droits étendus de gestion
+- **Administrateur** : Accès complet au système
+
+## Base de données
+La base de données contient les tables suivantes :
+- utilisateurs
+- abonnements
+- objets_connectes
+- historique_etats
+
+## Sécurité
+- Authentification requise pour accéder aux pages
+- Vérification des droits d'accès selon le grade
+- Protection contre les injections SQL
+- Sessions sécurisées
+
+## Maintenance
+Pour mettre à jour le système :
+1. Sauvegarder la base de données
+2. Mettre à jour les fichiers
+3. Vérifier les permissions des dossiers
+4. Tester toutes les fonctionnalités
+
+## Support
+En cas de problème :
+1. Vérifier les logs d'erreur
+2. Consulter la documentation
+3. Contacter le support technique
+
+## Auteurs
+- [Votre nom]
+- [Autres contributeurs]
+
+## Version
+1.0.0
+
+## Licence
+Tous droits réservés 
+
